@@ -1,0 +1,25 @@
+<button onclick="toggleMenu()" id="menu-toggle"><i class='bx bx-menu-alt-right'></i></button>
+
+<nav class="menu">
+    <ul class="list">
+        <a href="/" class="logo"><img src="/img/logowhite.jpg" /></a>
+        <li><a href="#top">Home</a></li>
+        <li><a href="#location">Our Location</a></li>
+        <li><a href="#featured">Featured Menu</a></li>
+        <li><a href="/">Feedback</a></li>
+    </ul>
+    <div class="center-button">
+        <!-- Replace the condition in navbar.ejs with this -->
+        <% if (user && user.email) { %>
+            <!-- Render user's email when logged in -->
+            <span><i class="bx bx-user"></i>
+                <%= user.email %>
+            </span>
+            <a href="/logout" class="logout"><i class="bx bxs-log-out-circle"></i> Logout</a>
+            <% } else { %>
+                <!-- Render "Sign in" when not logged in -->
+                <a href="/login" class="login"><i class="bx bxs-log-in-circle"></i> Sign in</a>
+                <% } %>
+
+    </div>
+</nav>
