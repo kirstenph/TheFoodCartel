@@ -15,6 +15,9 @@ exports.getProfile = (req, res) => {
     res.render('profile');
   } else {
     // res.status(401).send('Unauthorized. Please log in.');
-    res.redirect('/login')
+    res.redirect('login')
   }
 };
+
+
+

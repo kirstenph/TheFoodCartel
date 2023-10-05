@@ -1,0 +1,67 @@
+
+
+.dashboard main {
+    padding: 2rem;
+}
+
+.dashboard .first-page {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 80px 1fr;
+    grid-template-areas:
+        "side header"
+        "side main";
+}
+
+.dashboard .first-page {
+    background: #c3c5ca;
+    padding: 25px;
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+        "c1 c2 c3"
+        "c4 c4 c5"
+        "c4 c4 c5";
+    gap: 20px;
+
+}
+
+.dashboard .first-page .card {
+    background: #fff;
+}
+
+.dashboard .first-page .card:nth-child(1) {
+    grid-area: c1;
+}
+
+.dashboard .first-page .card:nth-child(2) {
+    grid-area: c2;
+}
+
+.dashboard .first-page .card:nth-child(3) {
+    grid-area: c3;
+}
+
+.dashboard .first-page .card:nth-child(4) {
+    grid-area: c4;
+}
+
+.dashboard .first-page .card:nth-child(5) {
+    grid-area: c5;
+}
+
+
+@media (max-width: 925px) {
+    .dashboard .first-page {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 200px);
+        grid-template-areas: initial;
+    }
+
+    .dashboard .first-page .card {
+        grid-area: initial !important;
+    }
+}

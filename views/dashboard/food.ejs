@@ -1,0 +1,146 @@
+<%- include('../partials/header_imports'); %>
+    <%- include('../partials/dashboard/navbar.ejs'); %>
+        <%- include('../partials/dashboard/sidebar.ejs'); %>
+
+            <div class="dashboard">
+                <main class="food-page">
+
+                    <section class="food">
+
+                        <button id="showForm">Create New Item</button>
+
+                        <div class="add-food">
+                            <span class="title">Add new item</span>
+                            <form enctype="multipart/form-data" autocomplete="off" aria-autocomplete="none"
+                                action="/createFood" method="POST" id="addfood-form">
+                                <div class="top">
+                                    <!---------------------- COLUMN 1 -------------------->
+                                    <div class="col1">
+                                        <div id="imagePreview" src="https://dummyimage.com/1:1x300/333/fff"
+                                            alt="placeholder image goes here"></div>
+                                        <input id="uploadFile" type="file" name="image" class="img" />
+
+                                        <div class="field">
+                                            <label for="desc"><b>Description</b></label>
+                                            <textarea name="desc" placeholder="Enter description"></textarea>
+                                        </div>
+                                    </div>
+
+
+                                    <!----------------- COLUMN 2 --------------------->
+                                    <div class="col2">
+                                        <div class="field">
+                                            <label for="name"><b>Name</b></label>
+                                            <input type="text" placeholder="Enter name" name="name">
+                                        </div>
+                                        <label for="itemSelect">Select an item:</label>
+                                        <select id="itemSelect">
+                                            <option value="volvo">Wings</option>
+                                            <option value="volvo">Pizza</option>
+                                        </select>
+                                        <button id="addItemButton">Add</button>
+                                    </div>
+                                    <!---------------- COLUMN 3 ------------------->
+                                    <div class="col3">
+                                        <div class="field">
+                                            <label for="stock"><b>Stock</b></label>
+                                            <input type="number" placeholder="0" value="1" name="stock" required>
+                                        </div>
+                                        <div class="field">
+                                            <label for="price"><b>Price</b></label>
+                                            <input type="number" placeholder="0" name="price" required>
+                                        </div>
+                                        <div class="field">
+                                            <label for="vat"><b>Vat</b></label>
+                                            <input type="number" placeholder="0" name="vat" required>
+                                        </div>
+
+                                        <label class="checkbox" style="display: block;">
+                                            <input type="checkbox" name="active">&nbsp;Active</label>
+                                        <label class="checkbox" style="display: block;">
+                                            <input type="checkbox" name="bestseller">&nbsp;Bestseller</label>
+                                        <label class="checkbox" style="display: block;">
+                                            <input type="checkbox" name="featured">&nbsp;Feature in landing page</label>
+
+                                    </div>
+                                </div>
+                                <div class="bottom">
+                                    <div class="col1">
+                                        <!-- <div class="field">
+                                            <label for="desc"><b>Description</b></label>
+                                            <textarea name="desc" placeholder="Enter description"></textarea>
+                                        </div> -->
+                                        <button type="submit">Create item</button>
+                                    </div>
+                                    <!-- 
+                                        More columns here
+                                        .col2
+                                        .col3
+                                        ..
+                                    -->
+                                </div>
+
+                            </form>
+                        </div>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th></th>
+                                    <th>Name</th>
+                                    <th>Category</th>
+                                    <th>Description</th>
+                                    <th>Vat</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% let itemCount=1; %>
+                                    <% foods.forEach(food=> { %>
+                                        <tr>
+                                            <td>
+                                                <%= itemCount %>
+                                            </td>
+                                            <td>
+                                                <img src="<%= food.image.url %>" alt="<%= food.name %>">
+                                            </td>
+                                            <td>
+                                                <%= food.name %>
+                                            </td>
+                                            <td>
+                                                <%= food.category %>
+                                            </td>
+                                            <td>
+                                                <%= food.desc %>
+                                            </td>
+                                            <td>
+                                                <%= food.vat %>
+                                            </td>
+                                            <td>
+                                                <%= food.status %>
+                                            </td>
+                                            <td>
+                                                <!-- Add actions like edit and delete buttons here -->
+                                                <a href="/editFood/<%= food._id %>">Edit</a>
+                                                <a href="/deleteFood/<%= food._id %>">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <% itemCount++; %>
+                                            <% }); %>
+
+                            </tbody>
+                        </table>
+
+
+
+
+                    </section>
+
+                </main>
+            </div>
+
+
+
+            <%- include('../partials/footer_imports.ejs'); %>

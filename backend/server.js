@@ -10,6 +10,7 @@ const passport = require('./passport');
 const clc = require("cli-color");
 const routes = require('./routes');
 
+
 const { PORT, SESSION_SECRET, MONGODB_URI } = process.env
 
 const app = express();
@@ -49,6 +50,7 @@ app.use(flash());
 // Middleware to make the currently logged-in user data available globally to views
 app.use((req, res, next) => {
   res.locals.user = req.user;
+
   next();
 });
 

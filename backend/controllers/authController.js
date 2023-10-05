@@ -48,6 +48,7 @@ exports.postLogin = (req, res, next) => {
   })(req, res, next);
 };
 
+
 exports.getLogout = (req, res) => {
   req.session.destroy(err => {
     if (err) {
