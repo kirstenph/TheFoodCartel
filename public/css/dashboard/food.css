@@ -1,90 +1,135 @@
-/* --------- ADD FOOD FORM ---------- */
-.dashboard .add-food {
+
+
+
+
+
+
+
+
+#deleteSelectedItems {
     display: none;
+  }
+
+
+.search-bar {
+    margin-bottom: 20px;
+}
+
+#searchInput {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#searchButton {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+/* --------- ADD FOOD FORM ---------- */
+
+.dashboard .add-food {
+
     position: fixed;
-    bottom: 0;
+    bottom: -50rem;
     left: 17rem;
     width: calc(100% - 18rem);
     background: white;
-    font-size: .8rem;
+    font-size: 1.4rem;
     border-radius: 1rem;
-    -webkit-box-shadow: 0px 2px 15px 3px rgba(115,115,115,0.24);
--moz-box-shadow: 0px 2px 15px 3px rgba(115,115,115,0.24);
-box-shadow: 0px 2px 15px 3px rgba(115,115,115,0.24);
-padding: 2rem;
-border: .5rem solid var(--primary);
+    padding: 2rem;
+    border: 1px solid rgba(0, 0, 0, .1);
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
-.dashboard .add-food .title {
-    font-size: 1rem;
-    text-align: center;
+.dashboard .add-food .field {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: center;
+    align-items: stretch;
 }
 
 .dashboard .add-food .top {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap; /* Allow flex items to wrap to the next line */
-}
-
-.dashboard .add-food .bottom {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap; /* Allow flex items to wrap to the next line */
-
+    flex-wrap: wrap;
+    align-content: stretch;
+    align-items: flex-start;
+    gap: 2rem;
 }
 
 .dashboard .add-food .top .col1,
 .dashboard .add-food .top .col2,
 .dashboard .add-food .top .col3 {
     flex-grow: 1;
-    border: 1px solid white;
-    padding: 1rem;
-    flex-direction: column; /* Stack label and input vertically */
 }
 
-.dashboard .add-food .top .col1 {
+.dashboard .add-food .field:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+.dashboard .add-food .col3 .buttons {
+    margin-top: 2rem;
     display: flex;
+    flex-wrap: nowrap;
+    align-content: space-between;
+    flex-direction: row;
     justify-content: center;
-    align-items: center; /* Center items horizontally within the column */
+    gap: 1rem
 }
 
-.dashboard .add-food .bottom .col1,
-.dashboard .add-food .bottom .col2 {
-    flex-grow: 1;
-    border: 1px solid white;
-    padding: 1rem;
-    flex-direction: column; /* Stack label and input vertically */
-    align-items: center; /* Center items horizontally within the column */
-}
-
-.dashboard .add-food .field label {
-    margin-bottom: .5rem;
-}
-.dashboard .add-food form input[type="text"] {
-    text-transform: capitalize;
-    height: 2rem;
-}
-.dashboard .add-food form input[type="text"],
-.dashboard .add-food form textarea {
-    width: 100%;
-    padding: 1rem;
-    text-align: center;
-    background: #ebebeb;
-    border: 0;
+.dashboard .add-food button {
     border-radius: .5rem;
+    padding: .5rem 1rem;
+    border: 1px solid transparent;
+    transition: .1s;
 }
 
-.dashboard input {
-    outline: none;
+.dashboard .add-food .col3 .buttons button:nth-of-type(1)  {
+    background-color: var(--primary);
+    color: var(--neutral-white);
+    border-color: var(--primary);
+}
+.dashboard .add-food .col3 .buttons button:nth-of-type(2)  {
+    background-color: transparent;
+    color: var(--primary);
+    border-color: var(--primary);
 }
 
-.dashboard .add-food form textarea {
-    height: 5rem;
+.dashboard .add-food input,
+.dashboard .add-food textarea,
+.dashboard .add-food select {
+    border-radius: .5rem;
+    border: 2px solid transparent;
+    background-color: #e7e7e7;
+    padding: .7rem;
 }
 
+.dashboard .add-food input:focus,
+.dashboard .add-food textarea:focus,
+.dashboard .add-food select:focus {
+    outline: 0;
+    border-color: var(--secondary)
+}
 
-.dashboard .add-food .checkbox {
-    display: block;
+.dashboard .add-food input {
+    text-transform: capitalize;
+}
+
+.dashboard .add-food label {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: .7rem;
+    padding-left: .4rem;
 }
 
 
@@ -94,12 +139,24 @@ border: .5rem solid var(--primary);
     background-position: center center;
     background-size: cover;
     -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
     display: inline-block;
-    background-image: url('https://dummyimage.com/1:1x300/fff/333');
+    background-image: url('https://dummyimage.com/1:1x300/e7e7e7/333');
+    transition: box-shadow .3s;
+    border-radius: .5rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
-#uploadFile{
-  display: none
+#imagePreview:hover {
+    box-shadow: 0 0 11px rgba(33, 33, 33, .2);
+}
+
+#uploadFile {
+    display: none
 }
 
 
@@ -117,30 +174,89 @@ border: .5rem solid var(--primary);
 .dashboard table td,
 .dashboard table th {
     border-bottom: 1px solid #DDDDDD;
-    padding: 10px 10px;
+    padding: 1rem 5rem;
 }
 
 .dashboard table tbody td {
-    font-size: 12px;
     color: #333333;
 }
 
 .dashboard table thead {
-    border-bottom: 4px solid #333333;
+    background: #FAFAFA;
 }
 
 .dashboard table thead th {
-    font-size: 15px;
-    font-weight: bold;
     color: #333333;
     text-align: left;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    letter-spacing: .05rem;
 }
 
-.dashboard table tfoot td {
+/* .dashboard table tfoot td {
     font-size: 14px;
+} */
+
+.dashboard table .image-container {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50px;
+    overflow: hidden;
 }
 
 .dashboard table img {
-    width: 5rem;
-    height: 5rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+
+
+
+
+
+
+
+
+/* Style the container for the dropdown */
+.action-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Style the button that will trigger the dropdown menu */
+.dropdown-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* Style the dropdown menu itself */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Style the links inside the dropdown menu */
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: #333;
+}
+
+/* Change color on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+
+.action-dropdown:focus-within .dropdown-content {
+    display: block;
 }

@@ -1,0 +1,35 @@
+.dashboard .topbar {
+    position: fixed;
+    top: 0;
+    left: 16rem;
+    width: calc(100% - 16rem);
+    height: 5rem;
+    background: pink;
+    z-index: 99;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 3rem;
+}
+
+.dashboard .topbar .user {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+.dashboard .topbar .user img {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.dashboard .topbar .user .details {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}

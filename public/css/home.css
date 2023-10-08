@@ -23,6 +23,11 @@
     color: #ffffffc9;
 }
 
+#top .col1 .first-line,
+#top .col1 .second-line {
+    font-size: 5rem;
+}
+
 #top .col1 p {
     letter-spacing: .3rem;
     text-transform: uppercase;

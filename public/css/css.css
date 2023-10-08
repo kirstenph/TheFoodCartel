@@ -1,7 +1,7 @@
 :root {
     --brandcolor: #046A38;
     --primary: #046A38;
-    --secondary: #046A38;
+    --secondary: #90EE90;
     --accent: #A4FFD2;
     --neutral-white: #fff;
     --neutral-black: #111;
@@ -37,14 +37,20 @@ section:last-of-type:not(#register) {
     justify-content: space-evenly;
 }
 
-
-
 html,
 body {
     overflow-x: hidden;
 }
 
-* {
+body {
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;

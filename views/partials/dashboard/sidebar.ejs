@@ -1,18 +1,25 @@
 <div class="dashboard">
-    <aside>
+    <div class="sidebar">
         <div class="user">
-            <img src="img/kirs1.jpg">
+            <img src="<%= user.image.url%>" alt="<%= user.firstName %> <%= user.lastName %>">
             <div class="details">
-                <span class="name"><%= user.firstName %> <%= user.lastName %></span>
-                <span class="role"><%= user.role %></span>
+                <div class="name">
+                    <span>
+                        <%= user.firstName %>
+                        <%= user.lastName %>
+                    </span>
+                </div>
+                <div class="role">
+                   <span><%= user.role %></span> 
+                </div>
+
             </div>
         </div>
-    
-        <div class="nav">
+        <div class="navigation">
             <ul>
-                <li><a href="#">Manage Food</a></li>
+                <li>Hi there</li>
             </ul>
         </div>
+    </div>
     </aside>
 </div>
-

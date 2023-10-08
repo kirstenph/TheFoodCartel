@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const foodSchema = new mongoose.Schema({
+    category: String,
     name: {
         type: String,
         require: true
@@ -20,9 +21,10 @@ const foodSchema = new mongoose.Schema({
         url: String,
         filename: String
     },
-    isActive: {
-        type: Boolean,
-        default: true,
+    status: {
+        type: String,
+        enum: ['active', 'inactive'],
+        default: 'active',
     },
     isFeatured: {
         type: Boolean,
@@ -34,6 +36,9 @@ const foodSchema = new mongoose.Schema({
     },
     desc: {
         type: String,
+    },
+    goodFor: {
+        type: Number
     }
 }, { timestamps: true });
 

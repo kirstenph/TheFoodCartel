@@ -9,7 +9,6 @@ const upload = mutler({ storage });
 const { isLoggedIn, isAdmin, isStaff } = require('./middleware');
 const home = require('./controllers/homeController');
 const auth = require('./controllers/authController');
-const admin = require('./controllers/adminController')
 const food = require('./controllers/foodController')
 
 router.get('/', home.getHome);
@@ -22,19 +21,23 @@ router.get('/login', auth.getLogin);
 router.post('/login', auth.postLogin, auth.postRegister);
 router.get('/logout', auth.getLogout);
 
+// router.get('/profile', isLoggedIn, home.getProfile)
+router.get('/profile/:id', isLoggedIn, home.getUserProfile);
+router.get('/profile/', isLoggedIn, auth.redirectToOwnProfile);
 
-router.get('/profile', isLoggedIn, home.getProfile)
 
-// Admin
-router.get('/dashboard', isLoggedIn, isAdmin, admin.getDashboard)
-// router.get('/dashboard/food', isLoggedIn, isAdmin, home.getFood_ejs);
+router.get('/dashboard', isLoggedIn, isAdmin, home.getDashboard)
+router.get('/dashboard/food', isLoggedIn, isAdmin, food.getFoods);
+
+
+
 
 
 // Food
-// Create a new food
 router.post('/createFood', isLoggedIn, upload.single('image'), isAdmin, food.createFood);
+router.delete('/dashboard/food/:id', isLoggedIn, isAdmin, food.deleteFood);
+router.put('/dashboard/food/:id', isLoggedIn, isAdmin, upload.single('image'), food.editFood);
 
-// Get all food
-router.get('/dashboard/food', isLoggedIn, isAdmin, food.getFoods);
+
 
 module.exports = router;

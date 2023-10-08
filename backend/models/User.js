@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+// const passportLocalMongoose = require('passport-local-mongoose')
 
 const userSchema = new mongoose.Schema({
   firstName: String,
@@ -18,7 +19,16 @@ const userSchema = new mongoose.Schema({
     enum: ['customer', 'staff', 'admin'],
     default: 'customer',
   },
+  image: {
+    url: String,
+    filename: String
+  },
 });
+
+// userSchema.plugin(passportLocalMongoose,
+//   { usernameField: 'email' })
+
+
 
 userSchema.virtual('password')
   .set(function (password) {

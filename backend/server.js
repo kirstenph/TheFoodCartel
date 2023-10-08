@@ -7,6 +7,9 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const flash = require('express-flash');
 const passport = require('./passport');
+// const passport = require('passport')
+// const LocalStrategy = require('passport-local')
+// const User = require('./models/User')
 const clc = require("cli-color");
 const routes = require('./routes');
 
@@ -44,6 +47,9 @@ app.use(session({
 // Initialize Passport.js
 app.use(passport.initialize());
 app.use(passport.session());
+// passport.use(new LocalStrategy(User.authenticate()));
+// passport.serializeUser(User.serializeUser());
+// passport.deserializeUser(User.deserializeUser())
 
 app.use(flash());
 

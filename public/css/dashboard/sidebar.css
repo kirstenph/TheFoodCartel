@@ -1,4 +1,4 @@
-.dashboard aside {
+.dashboard .sidebar {
     position: fixed;
     top: 0;
     left: 0;
@@ -10,7 +10,7 @@
     overflow-x: hidden;
 }
 
-.dashboard aside .user {
+.dashboard .sidebar .user {
     background: rgba(255,255,255,.5);
     display: flex;
     align-items: center;
@@ -19,23 +19,23 @@
     padding: 1rem;
 }
 
-.dashboard aside .user img {
+.dashboard .sidebar .user img {
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
 }
 
-.dashboard aside .user .details {
+.dashboard .sidebar .user .details {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.dashboard aside .user .name {
+.dashboard .sidebar .user .name {
     font-size: 1.1rem;
 }
 
-.dashboard aside .user .role {
+.dashboard .sidebar .user .role {
     font-size: .7rem;
     text-transform: uppercase;
     letter-spacing: .1rem;
