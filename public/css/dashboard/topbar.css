@@ -1,16 +1,15 @@
 .dashboard .topbar {
     position: fixed;
     top: 0;
-    left: 16rem;
-    width: calc(100% - 16rem);
-    height: 5rem;
-    background: pink;
+    left: var(--dashboard-sidebar-width);
+    width: calc(100% - var(--dashboard-sidebar-width));
+    height: var(--dashboard-header-height);
     z-index: 99;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     padding: 0 3rem;
 }
 

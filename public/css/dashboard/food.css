@@ -1,14 +1,6 @@
-
-
-
-
-
-
-
-
 #deleteSelectedItems {
     display: none;
-  }
+}
 
 
 .search-bar {
@@ -35,11 +27,10 @@
 /* --------- ADD FOOD FORM ---------- */
 
 .dashboard .add-food {
-
     position: fixed;
     bottom: -50rem;
-    left: 17rem;
-    width: calc(100% - 18rem);
+    left: var(--dashboard-sidebar-width);
+    width: calc(100% - var(--dashboard-sidebar-width));
     background: white;
     font-size: 1.4rem;
     border-radius: 1rem;
@@ -94,12 +85,13 @@
     transition: .1s;
 }
 
-.dashboard .add-food .col3 .buttons button:nth-of-type(1)  {
+.dashboard .add-food .col3 .buttons button:nth-of-type(1) {
     background-color: var(--primary);
     color: var(--neutral-white);
     border-color: var(--primary);
 }
-.dashboard .add-food .col3 .buttons button:nth-of-type(2)  {
+
+.dashboard .add-food .col3 .buttons button:nth-of-type(2) {
     background-color: transparent;
     color: var(--primary);
     border-color: var(--primary);
@@ -158,6 +150,7 @@
 #uploadFile {
     display: none
 }
+
 
 
 
