@@ -1,0 +1,121 @@
+.auth-all-sections {
+    background: var(--primary) url('data:image/svg+xml,<svg id="patternId" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="a" patternUnits="userSpaceOnUse" width="120" height="20" patternTransform="scale(16) rotate(145)"><rect x="0" y="0" width="100%" height="100%" fill="hsla(0, 0%, 100%, 0)"/><path d="M-50.129 12.685C-33.346 12.358-16.786 4.918 0 5c16.787.082 43.213 10 60 10s43.213-9.918 60-10c16.786-.082 33.346 7.358 50.129 7.685" stroke-width="0.5" stroke="hsla(141, 61%, 30%, 1)" fill="none"/></pattern></defs><rect width="800%" height="800%" transform="translate(0,0)" fill="url(%23a)"/></svg>');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.auth-all-sections h1 {
+    color: var(--neutral-white)
+}
+
+.forgot {
+    color: var(--neutral-white);
+    font-size: .8rem;
+}
+#login .auth-box {
+    width: 450px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#register .auth-box {
+    width: 450px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#register .layout {
+    flex-direction: row-reverse;
+}
+
+.auth .field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    margin: 1rem 0;
+    border: 1px solid var(--neutral-white);
+    border-radius: .5rem;
+}
+
+.auth .field:focus-within {
+    box-shadow: 0px 0px 2px 5px rgba(99, 255, 178, .4);
+}
+
+.auth .field i {
+    font-size: 1.2rem;
+    width: 1.5rem;
+    display: flex;
+    justify-content: center;
+    padding: .5rem 1.5rem;
+    color: var(--neutral-white);
+}
+
+.auth #showPassword {
+    background: none;
+    border: 0;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.auth input {
+    border: 0;
+    width: 80%;
+    padding: 0 1rem;
+    letter-spacing: .1rem;
+    font-size: .8rem;
+    background: none;
+    color: var(--neutral-white)
+}
+
+.auth input:focus {
+    outline: none;
+}
+
+.auth input:-webkit-autofill,
+.auth input:-webkit-autofill:hover, 
+.auth input:-webkit-autofill:focus, 
+.auth input:-webkit-autofill:active{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #ffffff;
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 20px 20px rgba(0,0,0,0);
+}
+
+.auth .buttons {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.auth .login,
+.auth .register{
+    background: var(--neutral-white);
+    border: 0;
+    width: 100%;
+    color: var(--primary);
+    margin: .4rem 0;
+    padding: .3rem 0;
+    text-align: center;
+    border-radius: .5rem;
+}
+
+
+/* Hide all steps by default: */
+.tab {
+    display: none;
+  }
+
+  .auth ::placeholder {
+    color: var(--neutral-white);
+    opacity: .7; /* Firefox */
+  }
+  
+  .auth ::-ms-input-placeholder { /* Edge 12 -18 */
+    color: var(--neutral-white);
+    opacity: .7;
+  }

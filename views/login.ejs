@@ -1,0 +1,161 @@
+<%- include('./partials/header_imports.ejs'); %>
+
+<div class="auth">
+    <div class="auth-all-sections">
+
+        <section id="login">
+            <div class="wrapper">
+                <div class="layout">
+
+                    <div class="col1">
+                        <img src="img/design.jpg">
+                    </div>
+                    <div class="col2">
+                        <div class="auth-box">
+                            <h1>Login</h1>
+                            <% if (messages.error) { %>
+                                <div class="alert alert-danger">
+                                    <%= messages.error %>
+                                </div>
+                                <% } %>
+
+                                    <% if (messages.success) { %>
+                                        <div class="alert alert-success">
+                                            <%= messages.success %>
+                                        </div>
+                                        <% } %>
+                                            <form method="POST" action="/login">
+                                                <div class="field">
+                                                    <i class="fa-regular fa-envelope"></i>
+                                                    <input type="email" id="email" name="email" required><br>
+                                                </div>
+
+                                                <div class="field">
+                                                    <i class="fa-solid fa-asterisk"></i>
+                                                    <input type="password" id="password" name="password" required>
+                                                    <button id="showPassword" type="button"
+                                                        onclick="togglePasswordVisibility('password', 'showPassword')">
+                                                        <span id="passwordIcon" class='bx bx-show-alt'></span>
+                                                    </button>
+                                                </div>
+                                                <a class="forgot" href="#">Forgot Password</a>
+                                                <div class="buttons">
+                                                    <button type="submit" class="login">Log In <i
+                                                            class='bx bx-log-in-circle'></i></button>
+                                                    <a href="#register" class="register">Create an account <i
+                                                            class='bx bx-down-arrow-alt'></i></a>
+                                                </div>
+                                            </form>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="register">
+            <div class="wrapper">
+                <div class="layout">
+
+
+                    <div class="col1">
+                        <img src="img/design.jpg">
+                    </div>
+
+                    <div class="col2">
+                        <div class="auth-box">
+                            <h1>Register</h1>
+                            <% if (messages.error) { %>
+                                <div class="alert alert-danger">
+                                    <%= messages.error %>
+                                </div>
+                                <% } %>
+
+                                    <% if (messages.success) { %>
+                                        <div class="alert alert-success">
+                                            <%= messages.success %>
+                                        </div>
+                                        <% } %>
+
+                                            <form method="POST" action="/register" id="register-form">
+                                                <!-- ----------- TAB -------------- -->
+                                                <div class="tab">
+                                                    <div class="field">
+                                                        <i class="fa-regular fa-user"></i>
+                                                        <input type="text" id="firstName" name="firstName" oninput="this.className = ''" placeholder="First name" required><br>
+                                                    </div>
+                                                    <div class="field">
+                                                        <i class="fa-regular fa-user"></i>
+                                                        <input type="text" id="lastName" name="lastName" oninput="this.className = ''" placeholder="Last Name" required><br>
+                                                    </div>
+                                                </div>
+                                                <!-- ----------- TAB -------------- -->
+                                                <div class="tab">
+                                                    <div class="field">
+                                                        <i class="fa-regular fa-envelope"></i>
+                                                        <input type="email" id="email" name="email" oninput="this.className = ''" placeholder="Enter email" required><br>
+                                                    </div>
+
+                                                    <div class="field">
+                                                        <i class="fa-solid fa-asterisk"></i>
+                                                        <input type="password" id="password" name="password" oninput="this.className = ''" placeholder="Enter password" required>
+                                                        <button id="showPassword" type="button"
+                                                            onclick="togglePasswordVisibility('password', 'showPassword')">
+                                                            <span id="passwordIcon" class='bx bx-show-alt'></span>
+                                                        </button>
+                                                    </div>
+
+                                                    <!-- <div class="buttons">
+                                                        <button type="submit" class="register">Register <i
+                                                                class='bx bx-log-in-circle'></i></button>
+                                                        <a href="#login" class="login">Login <i
+                                                                class='bx bx-up-arrow-alt'></i></a>
+                                                    </div> -->
+
+                                                </div>
+
+
+                                                <div style="overflow:auto;">
+                                                    <div style="float:right;">
+                                                        <button type="button" id="prevBtn"
+                                                            onclick="nextPrev(-1)">Previous</button>
+                                                        <button type="button" id="nextBtn"
+                                                            onclick="nextPrev(1)">Next</button>
+                                                    </div>
+                                                </div>
+
+                                                <div style="text-align:center;margin-top:40px;">
+                                                    <span class="step"></span>
+                                                    <span class="step"></span>
+                                                    <span class="step"></span>
+                                                    <span class="step"></span>
+                                                  </div>
+
+
+                                            </form>
+
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+        </section>
+    </div>
+
+</div>
+
+
+    
+
+
+    <%- include('./partials/footer_imports.ejs'); %>

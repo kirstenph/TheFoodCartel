@@ -1,0 +1,120 @@
+:root {
+    --dashboard-sidebar-width: 17rem;
+    --dashboard-header-height: 6rem;
+}
+
+.dashboard .main-container {
+    position: absolute;
+    top: var(--dashboard-header-height);
+    left: var(--dashboard-sidebar-width);
+    width: calc(100% - var(--dashboard-sidebar-width));
+    height: 100%;
+    padding: 0 2rem;
+}
+
+.dashboard .row {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.card-01 {
+    flex: 1;
+    height: 150px;
+    margin: 10px;
+    background: var(--primary);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;
+    color: var(--neutral-white);
+    border-radius: 1rem;
+}
+
+
+.card-01 .icon i {
+    font-size: 7rem;
+}
+
+.card-01 .stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-01 .numbers {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.card-01 .title {
+    text-align: center;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: .05rem;
+}
+
+
+
+.card-02 {
+    flex: 1;
+    border: 1px solid rgba(0, 0, 0, .1);
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.card-02 .stat-card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    background-color: aquamarine;
+    padding: 3rem 4rem;
+    border-radius: 2rem;
+    width: 20rem;
+}
+
+.card-02 .stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-02 .stat-card .icon i {
+    font-size: 4rem;
+}
+
+.card-02 .stat-card .numbers {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.card-02 .stat-card .title {
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+.card-03 {
+    flex: 1;
+    height: 200px;
+    margin: 10px;
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+
+/* @media (max-width: 80rem) {
+    .card-01 {
+        flex: 40%;
+
+    }
+
+}
+
+@media (max-width: 50rem) {
+    .card-01 {
+        flex: 100%;
+    }
+
+} */

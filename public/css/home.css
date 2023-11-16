@@ -1,0 +1,154 @@
+
+
+/* ------------- HEADER ------------- */
+#top {
+    background: var(--svg-header) no-repeat left/cover;
+    background-color: var(--neutral-white);
+    position: relative;
+    z-index: 1;
+}
+
+#top .layout {
+    height: 100vh;
+}
+
+#top .col1,
+#top .col2 {
+    margin: 0 2rem;
+    flex-grow: 1;
+    color: var(--neutral-white);
+}
+
+#top .col1 .first-line {
+    color: #ffffffc9;
+}
+
+#top .col1 .first-line,
+#top .col1 .second-line {
+    font-size: 5rem;
+}
+
+#top .col1 p {
+    letter-spacing: .3rem;
+    text-transform: uppercase;
+    font-size: .7rem;
+    margin: 1rem 0 3rem 0;
+}
+
+#top .col2 {
+    text-align: center;
+}
+
+#top .links {
+    margin-bottom: 1rem;
+}
+
+#top .reserve,
+#top .menu {
+    padding: 5px 10px;
+    border-radius: 8px;
+    align-content: center;
+}
+
+#top .reserve {
+    color: var(--primary);
+    border: 1px solid var(--neutral-white);
+    background: var(--neutral-white);
+    transition: background-position 1.1s ease, color 1s ease;
+    margin-right: .2rem;
+}
+
+#top .reserve:hover {
+    color: var(--neutral-white);
+    background-image: var(--svg-reserve);
+    background-position: 100% 70%;
+    background-size: auto 100px;
+}
+
+#top .menu {
+    color: var(--neutral-white);
+    border: 1px solid var(--neutral-white);
+    background: var(--primary);
+    transition: background-position 1.1s ease, color 1s ease;
+}
+
+#top .menu:hover {
+    color: var(--primary);
+    background-image: var(--svg-menu);
+    background-position: 100% 70%;
+    background-size: auto 100px;
+}
+
+#video {
+    position: relative;
+    z-index: 1;
+    background: white;;
+}
+
+/* --------- FEATURED MENU ---------- */
+#featured {
+    background: url('../img/img5.jpg') no-repeat center/cover fixed;
+    backdrop-filter: blur( 50px );
+    -webkit-backdrop-filter: blur( 50px );
+    
+}
+
+#featured .blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+}
+
+
+#featured .layout {
+    flex-direction: column;
+
+}
+
+#featured .items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content: flex-start; */
+    z-index: 4;
+    
+}
+
+#featured .title {
+    color: var(--neutral-white);
+    z-index: 4;
+}
+
+#featured .details {
+    display: flex;
+    justify-content: space-between;
+}
+#featured .description {
+    padding: 0 1rem 0 1rem; 
+    font-size: 0.7rem;
+}
+#featured .items .item {
+    margin: 20px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    width: 300px;
+    background: var(--neutral-white);
+}
+
+#featured .item .image {
+    position: relative;
+    padding-top: 55%;
+    overflow: hidden;
+
+}
+
+#featured .item .image img {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
